@@ -1,0 +1,53 @@
+md-dialog.enlarged-dialog {
+    max-width: 70%;
+    max-height: 70%;
+    width: 70%;
+    height: 90%;
+    border-radius: 0;
+}
+
+md-toast.md-top {
+    left: 50%;
+    margin-left: -150px;
+}
+
+.mdl-card__media {
+    margin: 0;
+}
+
+.mdl-card__media > img {
+    max-width: 100%;
+}
+
+
+
+
+.mdl-grid {
+    max-width: 1000px;
+}
+
+
+
+.mdl-card__media {
+    margin: 0;
+    max-height: 100%;
+}
+.mdl-card__media > img {
+    max-width: 100%;
+}
+.mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+}
+.mdl-card__actions > .mdl-button--icon {
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}

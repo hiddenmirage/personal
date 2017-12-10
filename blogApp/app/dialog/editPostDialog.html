@@ -1,0 +1,27 @@
+<md-dialog aria-label="Mango (Fruit)" ng-controller="MainCtrl" class="enlarged-dialog">
+    <form ng-cloak>
+        <md-dialog-content flex>
+            <div class="md-dialog-content">
+                <md-input-container flex>
+                    <label class="">Title</label>
+                    <input type="text" name="title" ng-model="editPostData.title" required>
+                </md-input-container>
+                <br>
+                <label>Post</label>
+                <textarea name="post" class="form-control"
+                          ng-model="editPostData.post" rows="20"></textarea>
+            </div>
+
+            <md-dialog-actions layout="row">
+
+                <span flex></span>
+                <md-button class="md-raised md-primary" ng-click="updatePost()">
+                    Edit Post
+                </md-button>
+                <md-button ng-click="cancelPost()">
+                    Cancel
+                </md-button>
+            </md-dialog-actions>
+        </md-dialog-content>
+    </form>
+</md-dialog>

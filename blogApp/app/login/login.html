@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body ng-controller="loginCtrl">
+
+<div class="container">
+    <div class="jumbotron col-md-6 col-md-offset-3" style="padding-top:0; padding-buttom:0;">
+        <h2>The Hidden Mirage Loft</h2>
+    </div>
+
+    <form name="form">
+        <div class="form-group col-md-6 col-md-offset-3">
+            <label>Email Address</label>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Email Address</label>
+                <input type="email" name="email" ng-model="loginForm.email" minlength="10" maxlength="100"
+                       ng-pattern="/^.+@.+\..+$/" required>
+
+                <div ng-messages="form.email.$error" role="alert">
+                    <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                        Your email must be between 10 and 100 characters long and look like an e-mail address.
+                    </div>
+                </div>
+
+            </md-input-container>
+        </div>
+
+
+        <div class="form-group col-md-6 col-md-offset-3">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Password</label>
+                <input type="password" name="password" ng-model="loginForm.password" ng-minlength="6" required>
+                <div ng-messages="form.password.$error" role="alert">
+                    <div ng-message-exp="['required', 'minlength']">
+                        Your password is invalid. It should be at least 6 characters long.
+                    </div>
+                </div>
+            </md-input-container>
+
+            <div ng-messages="" role="alert" ng-if="errorMessage != ''">
+                {{errorMessage}}
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-md-offset-3">
+            <label><a href="">Sign Up</a></label>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+            <md-button class="md-raised md-primary btn-block" ng-click="processLogin()">Sign In</md-button>
+        </div>
+
+    </form>
+
+</div>
+</body>
+</html>

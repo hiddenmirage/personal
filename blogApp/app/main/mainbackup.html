@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+
+
+<!--delete post confirmation dialog here-->
+<div ng-controller="MainCtrl">
+    <div class="container">
+        <div id="deleteModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Delete Post</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete this post?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sm btn-primary"
+                                data-dismiss="modal"
+                                ng-click="deletePostConf()">Delete Post
+                        </button>
+                        <button type="button" class="btn btn-sm btn-default"
+                                data-dismiss="modal">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--tab contents here-->
+<div ng-cloak>
+    <md-content>
+        <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+            <md-tab label="Blog" id="AddBlogTab">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2">My Blog</h1>
+
+                    <!--MAIN BLOG HERE-->
+                    <div ng-controller="MainCtrl">
+                        <div class="container">
+                            <div class="row" ng-repeat="article in articles | orderBy:'-'">
+                                <div class="col-md-12 well well-sm">
+                                    <h4>{{article.title}}</h4>
+                                    <p>{{article.post}}</p>
+
+                                    <!--EDIT POST HERE-->
+                                    <md-button class="md-primary md-raised" ng-click="editPost($event, article.$id)">
+                                        Edit
+                                    </md-button>
+                                    <!--DELETE POST HERE-->
+                                    <button type="submit" class="btn btn-sm btn-danger" ng-click="deletePost(article)"
+                                            data-target="#deleteModal" data-toggle="modal">Delete
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </md-content>
+            </md-tab>
+
+            <!--CREATE NEW POST HERE-->
+            <md-tab label="Add Post" id="AddPostTab">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2">Add A Post</h1>
+                    <div ng-controller="addPostCtrl">
+                        <div class="container">
+                            <form role="form" name="postForm" ng-submit="createPost()" novalidate>
+                                <legend>Create Post</legend>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label>Post Title</label>
+                                            <input type="text" placeholder="Title" class="form-control"
+                                                   ng-model="titleTxt"
+                                                   required/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Post</label>
+                                            <textarea ng-model="postTxt" class="form-control" placeholder="Post"
+                                                      required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" ng-click="$parent.selectedIndex=0"
+                                                    class="btn btn-primary">Submit Post
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </md-content>
+            </md-tab>
+            <md-tab label="ABOUT ME">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2">About Me</h1>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>
+
+</body>
+</html>
