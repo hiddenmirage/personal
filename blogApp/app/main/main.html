@@ -61,8 +61,8 @@
                                 <div ng-repeat="article in articles | orderBy:'-'"
                                      class="mdl-card mdl-cell mdl-cell--2-col-tablet mdl-shadow--2dp"
                                      style="max-height: 400px">
-                                    <figure class="mdl-card__media">
-                                        <img ng-src="{{article.imageUrl}}" style="max-height:210px"/>
+                                    <figure class="mdl-card__media" style="height:210px; width:310px">
+                                        <img ng-src="{{article.imageUrl}}" style="height:210px; width:310px"/>
                                     </figure>
                                     <div class="mdl-card__title">
                                         <h1 class="mdl-card__title-text">{{article.title}}</h1>
