@@ -60,11 +60,13 @@ md-toast.md-top {
 .grassbox {
     position: relative;
     height: 700px;
-    background-image: url("../images/grasspatch_blur.JPG");
+    background-image: url("../images/grasspatch_mildblur.JPG");
     background-size: 950px 1000px;
-    background-position: bottom;
-    background-attachment: fixed;
+    /*background-size: contain;*/
+    /*background-size: 50% 50%;*/
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
 
 }
 
@@ -86,7 +88,8 @@ md-toast.md-top {
     background-image: url("../images/extended_family_cropped.png");
     background-repeat: no-repeat;
     background-position: center bottom;
-    background-size: 50% 90%;
+    /*background-size: 50% 90%;*/
+    background-size: 950px 700px;
     position: absolute;
     /*left:100%;*/
     /*margin-left: -480px;*/
