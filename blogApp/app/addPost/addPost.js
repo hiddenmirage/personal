@@ -13,9 +13,9 @@ angular.module('webApp.addPost', ['ngRoute', 'firebase'])
         var loggedInUser = firebase.auth().currentUser;
 
 
-        if (!loggedInUser) {
-            $location.path('/login');
-        } else {
+        // if (!loggedInUser) {
+        //     $location.path('/login');
+        // } else {
 
             //listen for file selection
             var uploader = document.getElementById('uploader');
@@ -99,36 +99,5 @@ angular.module('webApp.addPost', ['ngRoute', 'firebase'])
 
             }
 
-
-            // fileButton.addEventListener('change', function (e) {
-            //     //get file
-            //     var file = e.target.files[0];
-            //     console.log("file is :", e.target.files);
-            //     $scope.displayImage = file;
-            //     // $scope.fileList = e.target.files;
-            //     //create storage ref
-            //     var storageRef = firebase.storage().ref('Photos/' + file.name);
-            //     //upload file
-            //     var task = storageRef.put(file);
-            //     //update progress bar
-            //     //subscribe to any state changes that happened when file is being uploaded
-            //     task.on('state_changed', function progress(snapshot) {
-            //             var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            //             uploader.value = percentage;
-            //         },
-            //         function error(err) {
-            //             //edit error messages if error occurs
-            //             console.log("An error occurred while uploading the image: ", err);
-            //         },
-            //         function complete() {
-            //             //indicates if upload is complete
-            //             console.log("Uploading is complete!");
-            //             console.log("snapshot on complete: ", task);
-            //         }
-            //     )
-            //
-            // })
-
-
-        }
+        // }
     }]);

@@ -6,16 +6,6 @@ angular.module('webApp.login', [
     'firebase',
     'ngMessages'
 ])
-
-    .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider
-            .when('/login', {
-                templateUrl: 'login/login.html',
-                controller: 'loginCtrl'
-            });
-
-    }])
-
     .controller('loginCtrl', ['$scope', '$firebaseAuth', '$location', function ($scope, $firebaseAuth, $location) {
 
         var auth = $firebaseAuth();
