@@ -5,18 +5,6 @@
     <title>Main</title>
 </head>
 <body>
-<!--<nav class="navbar navbar-inverse">-->
-<!--<div class="container-fluid">-->
-<!--<div class="navbar-header">-->
-<!--<a href="#" class="navbar-brand">K.Y</a>-->
-<!--</div>-->
-<!--&lt;!&ndash;need to add #! for ng-href&ndash;&gt;-->
-<!--<ul class="nav navbar-nav">-->
-<!--<li ng-click="processLogout()"><a>Logout</a></li>-->
-
-<!--</ul>-->
-<!--</div>-->
-<!--</nav>-->
 
 <!--delete post confirmation dialog here-->
 <div ng-controller="MainCtrl">
@@ -51,6 +39,30 @@
 <div ng-cloak>
     <md-content>
         <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+            <md-tab label="Home" id="HomeTab">
+                <header>
+                    <div class="grassbox">
+                        <div class="logo"></div>
+                        <div class="foregrass"></div>
+                    </div>
+                </header>
+                <div class="content">
+                    <article>
+                        <h1 style="color:#ccc; weight:300">Home</h1>
+                        <hr>
+                        <p>This is the moment to breathe. My fears, my diffidence, my worries. It is this moment
+                            that I have decided to do everything to make anything happen.
+                            Taking in the unfathomable breaths of life. Trying hard to push beyond
+                            the limitless boundaries in order to overcome the myriad of challenges.
+                            What lies ahead is still in question, but choosing this ardous journey
+                            somehow backs me up with courage and determination.
+                            Thinking of breaking free and letting loose. Live, laugh, love but don't make drugs.
+                            This is me.
+                        </p>
+                    </article>
+                </div>
+
+            </md-tab>
             <md-tab label="Blog" id="AddBlogTab">
                 <h1 class="md-display-2">My Blog</h1>
                 <md-content>
@@ -61,8 +73,8 @@
                                 <div ng-repeat="article in articles | orderBy:'-'"
                                      class="mdl-card mdl-cell mdl-cell--2-col-tablet mdl-shadow--2dp"
                                      style="max-height: 400px">
-                                    <figure class="mdl-card__media" style="height:210px; width:310px">
-                                        <img ng-src="{{article.imageUrl}}" style="height:210px; width:310px"/>
+                                    <figure class="mdl-card__media" ng-click="readMore(article)">
+                                        <img ng-src="{{article.imageUrl}}" style="max-height:210px; width:315px"/>
                                     </figure>
                                     <div class="mdl-card__title">
                                         <h1 class="mdl-card__title-text">{{article.title}}</h1>

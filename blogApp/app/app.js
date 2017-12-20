@@ -10,20 +10,17 @@ angular.module('webApp', [
     'webApp.addPost',
     'webApp.editPostDialog',
     'webApp.postmain',
+    'webApp.appRoutes',
     'ngMaterial',
     'ngFileUpload'
-]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-
-    $routeProvider.otherwise({redirectTo: '/login'});
-
-}])
+])
     .controller('indexCtrl', ['$scope', '$routeParams', '$location', '$firebaseArray', '$firebaseObject', '$firebaseAuth', 'storeRef', '$mdToast', function ($scope, $routeParams, $location, $firebaseArray, $firebaseObject, $firebaseAuth, storeRef, $mdToast) {
         $scope.showNavBar = false;
         var loggedInUser = firebase.auth().currentUser;
 
-        if (loggedInUser) {
-            $scope.showNavBar = true;
-        }
+        // if (loggedInUser) {
+        //     $scope.showNavBar = true;
+        // }
 
         $scope.processLogout = function ($scope) {
             var auth = $firebaseAuth();
