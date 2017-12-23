@@ -10,6 +10,7 @@ angular.module('webApp.main', ['ngRoute', 'ngMaterial', 'firebase', 'ngMessages'
         //     $location.path('/login');
         // } else {
 
+
         $scope.readMore = function (article) {
             sessionService.set(0, article.$id);
 
